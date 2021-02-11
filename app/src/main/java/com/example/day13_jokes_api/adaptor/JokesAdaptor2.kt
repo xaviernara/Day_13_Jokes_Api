@@ -33,7 +33,7 @@ class JokesAdaptor2(val jokeResponseList : List<JokeResponse>) : RecyclerView.Ad
 
     }
 
-    class JokesViewHolder(private val binding: JokeRecyclerBinding) : RecyclerView.ViewHolder(binding.root){
+    class JokesViewHolder(private val binding: JokeRecyclerBinding) : RecyclerView.ViewHolder(binding.root) , View.OnClickListener{
 
         fun setTextViews(joke: String, delivery: String){
             binding.textView.text=joke
@@ -45,6 +45,16 @@ class JokesAdaptor2(val jokeResponseList : List<JokeResponse>) : RecyclerView.Ad
 
         }
 
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
+        override fun onClick(v: View?) {
+            TODO("Not yet implemented")
+            
+
+        }
 
 
     }

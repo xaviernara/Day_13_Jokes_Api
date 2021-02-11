@@ -9,6 +9,7 @@ import com.example.day13_jokes_api.model.JokeResponse
 import com.example.day13_jokes_api.repo.remote.JokeRepo
 import com.example.day13_jokes_api.repo.remote.JokesService
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,7 +33,6 @@ class MainViewModel :ViewModel(){
              * occurred creating the request or processing the response.
              */
             override fun onFailure(call: Call<List<JokeResponse>>, t: Throwable) {
-                TODO("Not yet implemented")
                 Log.e("VM Callback Error:","ONfAILURE", t)
 
             }
@@ -45,13 +45,14 @@ class MainViewModel :ViewModel(){
              * Call [Response.isSuccessful] to determine if the response indicates success.
              */
             override fun onResponse(call: Call<List<JokeResponse>>, response: Response<List<JokeResponse>>) {
-                TODO("Not yet implemented")
                 _jokes.value = response.body()
             }
 
         }
 
-       JokeRepo.jokesService.getJokesWithResponse("any",10)
+
+        viewModelScope.launch(Dispatchers.Main) {  JokeRepo.jokesService.getJokesWithResponse("any",10) }
+
 
     }
 
@@ -64,8 +65,6 @@ class MainViewModel :ViewModel(){
         Launches a new coroutine without blocking the current thread and returns a reference to the coroutine as a Job.
         The coroutine is cancelled when the resulting job is cancelled.
         */
-
-
         viewModelScope.launch(Dispatchers.Main){
             val jokeList = JokeRepo.getJokes(category, amount)
             _jokes.value = jokeList

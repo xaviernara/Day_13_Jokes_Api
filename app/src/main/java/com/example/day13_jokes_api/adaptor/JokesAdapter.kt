@@ -1,3 +1,4 @@
+/*
 
 package com.example.day13_jokes_api.adaptor
 
@@ -15,8 +16,11 @@ import com.example.day13_jokes_api.view.MainActivity
 class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
     RecyclerView.Adapter<JokesAdapter.JokesViewHolder> {
 
+*/
 /*
-    */
+    *//*
+
+*/
 /*
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
      * an item.
@@ -40,8 +44,12 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
      * @see .getItemViewType
      * @see .onBindViewHolder
      *//*
+*/
+/*
 
-    */
+    *//*
+
+*/
 /*
         Here you inflate the view from its layout and pass it in to a JokeViewHolder.
         The parent.inflate(R.layout.recyclerview_item_row, false) method will execute the new
@@ -54,6 +62,8 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
 
 
      *//*
+*/
+/*
 
 
 
@@ -64,19 +74,25 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
         return JokesViewHolder(inflatedView)
     }
 
-    */
+    *//*
+
+*/
 /**
      * Returns the total number of items in the data set held by the adapter.
      *
      * @return The total number of items in this adapter.
      *//*
+*/
+/*
 
     override fun getItemCount(): Int {
         return jokesResponseList.size
     }
 
 
-    */
+    *//*
+
+*/
 /*
      * Called by RecyclerView to display the data at the specified position. This method should
      * update the contents of the [ViewHolder.itemView] to reflect the item at the given
@@ -98,6 +114,8 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
      * item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
      *//*
+*/
+/*
 
     override fun onBindViewHolder(holder: JokesAdapter.JokesViewHolder, position: Int) {
         TODO("Not yet implemented")
@@ -108,19 +126,25 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
 
     //-----------------------------viewholder class-----------------------//
 
-    */
+    *//*
+
+*/
 /*
          create a nested class in your adapter.
          You’ll add it here rather than in a separate class because
          its behavior is tightly coupled with the adapter.
      *//*
+*/
+/*
 
 
     //1
     class JokesAdaptor(v: View) : RecyclerView.ViewHolder(v) View.OnClickListener
     {
 
-        */
+        *//*
+
+*/
 /*
             Here’s what the code above does:
 
@@ -137,6 +161,8 @@ class JokesAdapter(private val jokesResponseList: ArrayList<JokeResponse>) :
 
             5. Add a key for easy reference to the item launching the RecyclerView.
          *//*
+*/
+/*
 
 
 

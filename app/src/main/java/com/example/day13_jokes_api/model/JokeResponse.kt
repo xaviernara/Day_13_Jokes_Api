@@ -39,7 +39,7 @@ data class JokeResponse(
     val type: String,
 
     @field:Json(name ="delivery")
-        val delivery: String
+    val delivery: String
 
 
 )

@@ -39,5 +39,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/joke_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,8 @@ import com.example.day13_jokes_api.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
      lateinit var binding : ActivityMainBinding
+
+    lateinit var categoryString : String
      //lateinit var context :
      //lateinit  val context = itemView.context
 
@@ -46,46 +48,61 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * @param v The view that was clicked.
      */
     override fun onClick(v: View?) {
-
+        categoryString =""
         if (v != null) {
             when (v.id) {
                 R.id.anyRadioButton -> {
-                    intent.putExtra("anyCategory", binding.anyRadioButton.text)
+                    //intent.putExtra("anyCategory", binding.anyRadioButton.text)
+                    addCategoryToString("Any")
                     Toast.makeText(this,binding.anyRadioButton.text,Toast.LENGTH_SHORT).show()
                 }
                 R.id.miscRadioButton -> {
-                    intent.putExtra("miscCategory", binding.miscRadioButton.text)
-                    Toast.makeText(this,binding.miscRadioButton.text,Toast.LENGTH_SHORT).show()
+                    //intent.putExtra("miscCategory", binding.miscRadioButton.text)
+
+                    if(categoryString == "") addCategoryToString("Misc")
+                    else addCategoryToString(",Misc")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.programmingRadioButton -> {
-                    intent.putExtra("programmingCategory", binding.programmingRadioButton.text)
-                    Toast.makeText(this,binding.programmingRadioButton.text,Toast.LENGTH_SHORT).show()
+                    //intent.putExtra("programmingCategory", binding.programmingRadioButton.text)
+                    if(categoryString == "") addCategoryToString("Programming")
+                    else addCategoryToString(",Programming")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.spookyRadioButton -> {
-                    intent.putExtra("spookyCategory", binding.spookyRadioButton.text)
-                    Toast.makeText(this,binding.spookyRadioButton.text,Toast.LENGTH_SHORT).show()
+                    //intent.putExtra("spookyCategory", binding.spookyRadioButton.text)
+                    if(categoryString == "") addCategoryToString("Spooky")
+                    else addCategoryToString(",Sppoky")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.xmasRadioButton -> {
-                    intent.putExtra("xmasCategory", binding.xmasRadioButton.text)
-                    Toast.makeText(this,binding.xmasRadioButton.text,Toast.LENGTH_SHORT).show()
+                    //intent.putExtra("xmasCategory", binding.xmasRadioButton.text)
+                    if(categoryString == "") addCategoryToString("Xmas")
+                    else addCategoryToString(",Programming")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
 
                 }
                 R.id.darkRadioButton -> {
-                    intent.putExtra("darkCategory", binding.darkRadioButton.text)
-                    Toast.makeText(this,binding.darkRadioButton.text,Toast.LENGTH_SHORT).show()
-
+                   // intent.putExtra("darkCategory", binding.darkRadioButton.text)
+                    if(categoryString == "") addCategoryToString("Xmas")
+                    else addCategoryToString(",Xmas")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
                 }
                 R.id.punRadioButton -> {
-                    intent.putExtra("punCategory", binding.punRadioButton.text)
-                    Toast.makeText(this,binding.punRadioButton.text,Toast.LENGTH_SHORT).show()
+                    //intent.putExtra("punCategory", binding.punRadioButton.text)
+                    if(categoryString == "") addCategoryToString("Pun")
+                    else addCategoryToString(",Pun")
+                    Toast.makeText(this,categoryString,Toast.LENGTH_SHORT).show()
 
                 }
                 else -> {
-                    intent.putExtra("amount", binding.amountText.text)
+
                     Toast.makeText(this,binding.amountText.text,Toast.LENGTH_SHORT).show()
+                    intent.putExtra("amount", binding.amountText.text)
+                    intent.putExtra("categoryText", categoryString)
                     startActivity(intent)
                 }
             }
@@ -95,6 +112,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
+
+    }
+
+   private fun addCategoryToString(category: String) {
+       categoryString+= category
 
     }
 

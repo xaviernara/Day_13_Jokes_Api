@@ -30,7 +30,7 @@ class SecondActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initToolbar()
+        //initToolbar()
 
 
         val bundle : Bundle? =intent.extras
